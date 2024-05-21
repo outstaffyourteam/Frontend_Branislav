@@ -10,10 +10,11 @@ import ViewOriginalArticleButton from "./ViewOriginalArticleButton";
 type Props = { article: ArticleType; isFirst?: boolean };
 
 const Article = ({ article, isFirst }: Props) => {
+  console.log(isFirst && article);
   return (
     <div className="flex flex-col w-full items-start gap-5 bg-white rounded-[10px] p-3.5">
       {/* todo: fix this */}
-      {isFirst && (
+      {isFirst && article.thread.main_image && (
         <Suspense fallback={<div>Loading...</div>}>
           <img src={article?.thread.main_image} alt="Article Image" />
         </Suspense>

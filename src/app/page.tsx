@@ -11,7 +11,7 @@ export default function Home() {
     <div className="flex flex-col w-full gap-14">
       <Hero />
       <div className="flex flex-col items-start px-32 gap-16">
-        <div className="flex items-start gap-20 w-full">
+        <div className="flex sm:flex-col lg:flex-row sm:items-center lg:items-start gap-20 w-full">
           <div className="flex flex-col items-start gap-2.5">
             <Image src={TrumpImage} alt="Trump" width={600} />
             <CandidateInfo />
@@ -19,7 +19,7 @@ export default function Home() {
           <CandidateBio />
         </div>
         <SentimentAnalysis />
-        <div className="flex items-start gap-6 w-full">
+        <div className="flex sm:flex-col lg:flex-row items-start gap-6 w-full">
           <ArticleList isPositive />
           <ArticleList isPositive={false} />
         </div>

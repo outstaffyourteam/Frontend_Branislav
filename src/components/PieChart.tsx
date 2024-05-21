@@ -1,4 +1,3 @@
-import { Box, Typography } from "@mui/material";
 import { PieChart } from "@mui/x-charts/PieChart";
 
 type Props = {
@@ -8,7 +7,7 @@ type Props = {
 
 export default function BasicPie({ positive, negative }: Props) {
   return (
-    <Box>
+    <div className="flex sm:ml-20 flex-col items-center gap-5 h-full">
       <PieChart
         series={[
           {
@@ -18,19 +17,20 @@ export default function BasicPie({ positive, negative }: Props) {
             ],
           },
         ]}
+        tooltip={{}}
         width={400}
         height={200}
       />
-      <Box display="flex" justifyContent="center" marginTop={2}>
-        <Box display="flex" alignItems="center" marginRight={2}>
-          <Box width={16} height={16} bgcolor="#41D77C" marginRight={1} />
-          <Typography variant="body2">{`Positive`}</Typography>
-        </Box>
-        <Box display="flex" alignItems="center">
-          <Box width={16} height={16} bgcolor="#EE4C4C" marginRight={1} />
-          <Typography variant="body2">{`Negative`}</Typography>
-        </Box>
-      </Box>
-    </Box>
+      <div className="flex -ml-20 items-center gap-5">
+        <div className="flex items-center gap-2">
+          <div className="bg-[#41D77C] rounded-xl w-4 h-1.5" />
+          <p>Positive</p>
+        </div>
+        <div className="flex items-center gap-2">
+          <div className="bg-[#EE4C4C] rounded-xl w-4 h-1.5" />
+          <p>Negative</p>
+        </div>
+      </div>
+    </div>
   );
 }

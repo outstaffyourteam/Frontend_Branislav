@@ -4,7 +4,7 @@ type Props = {};
 
 const Hero = (props: Props) => {
   return (
-    <div className="bg-soft-peach w-full md:px-32 py-6 flex items-center justify-between">
+    <div className="bg-soft-peach w-full md:px-32 py-6 flex lg:flex-row sm:flex-col gap-5 items-center justify-between">
       <div className="flex flex-col items-start max-w-[800px]">
         <p className="text-orange-peel text-[48px] font-bold">
           2024 Presidential Candidates

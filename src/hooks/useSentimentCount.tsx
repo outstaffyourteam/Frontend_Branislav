@@ -1,8 +1,11 @@
 "use client";
 
 import { ArticlesResponse } from "@/types/Article";
-import { SentimentCount } from "@/types/SentimentAnalysos";
+import { SentimentCount } from "@/types/SentimentAnalysis";
 import { useEffect, useState } from "react";
+
+const API_URL = "https://api.webz.io/newsApiLite";
+const API_KEY = process.env.NEXT_PUBLIC_WEBZ_API_KEY;
 
 export const useSentimentCount = (title: string): SentimentCount => {
   const [summary, setSummary] = useState<SentimentCount>({
@@ -19,14 +22,14 @@ export const useSentimentCount = (title: string): SentimentCount => {
 
       for (const sentiment of sentiments) {
         const response = await fetch(
-          `https://api.webz.io/newsApiLite?token=4be344f8-edd7-4388-a3af-901fd16f95b2&q=${encodeURIComponent(
+          `${API_URL}?token=${API_KEY}&q=${encodeURIComponent(
             baseQuery
           )} AND sentiment:${sentiment}`
         );
         const data: ArticlesResponse = await response.json();
-        if (data && data.totalResults) {
+
+        if (data && data.totalResults)
           summary = { ...summary, [sentiment]: data.totalResults };
-        }
       }
 
       setSummary(summary);

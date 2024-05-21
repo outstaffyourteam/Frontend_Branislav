@@ -3,6 +3,9 @@
 import { Article, ArticlesResponse } from "@/types/Article";
 import { useEffect, useState } from "react";
 
+const API_URL = "https://api.webz.io/newsApiLite";
+const API_KEY = process.env.NEXT_PUBLIC_WEBZ_API_KEY;
+
 export const useArticles = (name: string): Article[] => {
   const [articles, setArticles] = useState<Article[]>([]);
 
@@ -10,9 +13,7 @@ export const useArticles = (name: string): Article[] => {
     const fetchArticles = async () => {
       const query = `title:${name} AND (election OR polls) AND sentiment:(positive OR negative) AND language:english`;
       const response = await fetch(
-        `https://api.webz.io/newsApiLite?token=4be344f8-edd7-4388-a3af-901fd16f95b2&q=${encodeURIComponent(
-          query
-        )}`
+        `${API_URL}?token=${API_KEY}&q=${encodeURIComponent(query)}`
       );
       const data: ArticlesResponse = await response.json();
       if (data && data.posts && Array.isArray(data.posts)) {

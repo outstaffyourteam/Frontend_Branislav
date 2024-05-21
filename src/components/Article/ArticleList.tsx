@@ -30,7 +30,6 @@ const ArticleList = ({ isPositive }: Props) => {
         <Article
           article={article}
           key={article.thread.uuid}
-          // todo: fix this
           isFirst={index === 0}
         />
       ))}

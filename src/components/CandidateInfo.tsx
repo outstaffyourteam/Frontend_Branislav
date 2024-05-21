@@ -5,7 +5,7 @@ type Props = {};
 
 const CandidateInfo = (props: Props) => {
   return (
-    <div className="flex flex-col items-center gap-5 py-4 bg-soft-peach rounded-lg w-full">
+    <div className="flex flex-col justify-center items-center gap-5 py-4 bg-soft-peach rounded-lg w-full">
       <div className="flex flex-col items-center gap-3">
         <p>Campaign Website</p>
         <Link

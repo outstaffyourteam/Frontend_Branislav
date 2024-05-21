@@ -8,7 +8,7 @@ const SentimentAnalysis = () => {
   const sentiments = useSentimentCount("Trump");
 
   return (
-    <div className="w-full flex items-center justify-between bg-soft-peach rounded-lg py-10 px-9">
+    <div className="w-full sm:gap-10 sm:flex-col lg:flex-row flex items-center justify-between bg-soft-peach rounded-lg py-10 px-9">
       <div className="flex flex-col items-start gap-6 max-w-[640px]">
         <div className="flex items-center gap-2">
           <Smiley />
