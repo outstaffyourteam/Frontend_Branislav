@@ -13,10 +13,14 @@
     "@emotion/styled": "^11.11.5",
     "@mui/material": "^5.15.18",
     "@mui/x-charts": "^7.5.0",
+    "clsx": "^2.1.1",
+    "html-react-parser": "^5.1.10",
     "lucide-react": "^0.379.0",
     "next": "14.2.3",
     "react": "^18",
-    "react-dom": "^18"
+    "react-dom": "^18",
+    "react-markdown-to-html": "^1.0.11",
+    "tailwind-merge": "^2.3.0"
   },
   "devDependencies": {
     "@types/node": "^20",

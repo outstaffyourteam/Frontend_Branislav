@@ -1,5 +1,6 @@
 export type Article = {
   thread: {
+    uuid: string;
     title: string;
     url: string;
     site_full: string;
@@ -12,6 +13,7 @@ export type Article = {
   language: string;
   sentiment: string | null;
   crawled: string;
+  highlightText: string;
 };
 
 export type ArticlesResponse = {

@@ -1,3 +1,4 @@
+import ArticleList from "@/components/Article/ArticleList";
 import CandidateBio from "@/components/CandidateBio/CandidateBio";
 import CandidateInfo from "@/components/CandidateInfo";
 import Hero from "@/components/Hero";
@@ -18,6 +19,10 @@ export default function Home() {
           <CandidateBio />
         </div>
         <SentimentAnalysis />
+        <div className="flex items-start gap-6 w-full">
+          <ArticleList isPositive />
+          <ArticleList isPositive={false} />
+        </div>
       </div>
     </div>
   );
