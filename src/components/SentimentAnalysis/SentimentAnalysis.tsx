@@ -8,15 +8,15 @@ const SentimentAnalysis = () => {
   const sentiments = useSentimentCount("Trump");
 
   return (
-    <div className="w-full sm:gap-10 sm:flex-col lg:flex-row flex items-center justify-between bg-soft-peach rounded-lg py-10 px-9">
-      <div className="flex flex-col items-start gap-6 max-w-[640px]">
+    <div className="w-full gap-10 flex-col xl:flex-row flex items-center justify-between bg-soft-peach rounded-lg py-10 px-9">
+      <div className="flex flex-col items-start gap-6">
         <div className="flex items-center gap-2">
           <Smiley />
           <p className="text-orange-peel flex font-semibold text-5xl w-full text-nowrap">
             Sentiment Analysis
           </p>
         </div>
-        <p className="text-lg gap-5 flex flex-col text-dark-slate-gray w-full">
+        <p className="text-lg gap-5 text-wrap flex flex-col text-dark-slate-gray w-full">
           <span>
             Webz.io sources and collects data from across the web and transforms
             it into machine-ready feeds that plug right into any platform. It

@@ -1,13 +1,19 @@
 "use client";
 
 import { useArticles } from "@/hooks/useArticles";
+import { ArticleOrder } from "@/types/Article";
 import { cn } from "../lib/utils";
 import Article from "./Article";
+import OrderDropdown from "./OrderDropdown";
 
-type Props = { isPositive?: boolean };
+type Props = {
+  isPositive?: boolean;
+  order: ArticleOrder;
+  setOrder: (order: ArticleOrder) => void;
+};
 
-const ArticleList = ({ isPositive }: Props) => {
-  let articles = useArticles("Trump");
+const ArticleList = ({ isPositive, order, setOrder }: Props) => {
+  let articles = useArticles("Trump", order);
 
   if (isPositive !== undefined) {
     articles = articles.filter((article) =>
@@ -20,12 +26,28 @@ const ArticleList = ({ isPositive }: Props) => {
   return (
     <div
       className={cn(
-        "flex flex-col w-full px-6 py-8 border border-paris-green rounded-[10px] gap-4",
+        "flex flex-col w-full gap-6 px-6 py-8 border border-paris-green rounded-[10px]",
         isPositive
           ? "border-paris-green bg-aque-squeeze"
           : "border-sweet-pink bg-dawn-pink"
       )}
     >
+      <div className="flex items-center justify-between w-full">
+        <div className="flex items-center gap-2">
+          <p
+            className={cn(
+              "font-extrabold",
+              isPositive ? "text-paris-green" : "text-sweet-pink"
+            )}
+          >
+            78
+          </p>
+          <p className="text-pale-sky">
+            {isPositive ? "Positive" : "Negative"} Articles
+          </p>
+        </div>
+        <OrderDropdown order={order} setOrder={setOrder} />
+      </div>
       {articles.map((article, index) => (
         <Article
           article={article}

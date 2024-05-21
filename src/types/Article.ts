@@ -21,3 +21,5 @@ export type ArticlesResponse = {
   totalResults: number;
   moreResultsAvailable: number;
 };
+
+export type ArticleOrder = "latest" | "oldest";

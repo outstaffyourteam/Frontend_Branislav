@@ -6,7 +6,7 @@ type Props = {};
 const CandidateBio = (props: Props) => {
   return (
     <div className="flex w-full flex-col items-start gap-10">
-      <div className="flex flex-col lg:items-start sm:items-center gap-6 w-full">
+      <div className="flex flex-col lg:items-start items-center gap-6 w-full">
         <div className="flex flex-col items-start gap-3">
           <p className="text-dark-slate-gray text-4xl font-bold">
             Donald Trump
@@ -15,7 +15,7 @@ const CandidateBio = (props: Props) => {
         </div>
         <Divider />
       </div>
-      <div className="flex flex-col lg:items-start sm:items-center gap-4">
+      <div className="flex flex-col lg:items-start items-center gap-4">
         <p className="text-dark-slate-gray  text-2xl font-medium">
           About the Candidate
         </p>
@@ -30,7 +30,7 @@ const CandidateBio = (props: Props) => {
         </p>
       </div>
       <Divider />
-      <div className="flex flex-col w-full lg:items-start sm:items-center gap-4">
+      <div className="flex flex-col w-full lg:items-start items-center gap-4">
         <p className="text-dark-slate-gray text-2xl font-medium">
           Campaign positions
         </p>

@@ -7,7 +7,7 @@ type Props = {
 
 export default function BasicPie({ positive, negative }: Props) {
   return (
-    <div className="flex sm:ml-20 flex-col items-center gap-5 h-full">
+    <div className="flex ml-20 flex-col items-center gap-5 h-full">
       <PieChart
         series={[
           {
