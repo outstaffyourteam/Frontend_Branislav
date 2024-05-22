@@ -30,7 +30,7 @@ const Article = ({ article, isFirst }: Props) => {
         <p className="text-2xl font-bold text-dark-slate-gray">
           {article?.title}
         </p>
-        <p className="text-mountain-mist">
+        <p className="break-words text-mountain-mist max-w-[730px] overflow-wrap-break-word word-break">
           {article?.highlightText &&
             parse(truncateText(article?.highlightText))}
         </p>

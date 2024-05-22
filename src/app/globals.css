@@ -30,3 +30,9 @@ body {
 .MuiChartsLegend-root {
   display: none;
 }
+
+.break-words {
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  hyphens: auto;
+}
