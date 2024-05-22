@@ -9,7 +9,7 @@ const Pagination = ({ pageNumber, onPrev, onNext }: Props) => {
       >
         Prev
       </button>
-      <div className="py-3 px-4 border border-dark-slate-gray/15 rounded-lg">
+      <div className="py-3 min-w-10 bg-orange-peel text-white px-4 border border-dark-slate-gray/15 rounded-lg">
         {pageNumber}
       </div>
       <button

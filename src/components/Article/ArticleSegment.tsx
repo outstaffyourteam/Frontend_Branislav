@@ -25,7 +25,7 @@ const ArticleSegment = () => {
   };
 
   return (
-    <div className="flex flex-col items-center gap-5">
+    <div className="flex flex-col items-center gap-16">
       <div className="flex flex-col lg:flex-row items-start gap-6 w-full">
         <ArticleList
           articles={articles}

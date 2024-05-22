@@ -15,7 +15,7 @@ type Props = {
 const OrderDropdown = ({ order, setOrder }: Props) => {
   return (
     <DropdownMenu>
-      <DropdownMenuTrigger className="border capitalize border-dark-slate-gray/25 px-4 flex items-center gap-4 py-2 rounded-[20px]">
+      <DropdownMenuTrigger className="border hover:border-dark-slate-gray/55 transition-colors duration-200 capitalize border-dark-slate-gray/25 px-4 flex items-center gap-4 py-2 rounded-[20px]">
         {order}
         <ChevronDown />
       </DropdownMenuTrigger>
