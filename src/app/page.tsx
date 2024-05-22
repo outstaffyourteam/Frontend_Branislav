@@ -1,18 +1,9 @@
-"use client";
-
 import Divider from "@/components/Divider";
 import PersonaCard from "@/components/PersonaCard";
-import { useRouter } from "next/navigation";
 import BidenImage from "./../images/biden.png";
 import TrumpImage from "./../images/trump.png";
 
 const Page = () => {
-  const router = useRouter();
-
-  const handleClick = (persona: string) => {
-    router.push(persona);
-  };
-
   return (
     <div className="flex bg-slate-300 items-center justify-center min-h-screen h-full w-full">
       <div className="flex flex-col items-center lg:items-start gap-6 bg-white rounded-[20px] py-10 min-w-[1000px]">
@@ -29,14 +20,14 @@ const Page = () => {
             name="Donald Trump"
             party="The Republicans"
             about="Donald John Trump was born on June 14, 1946, in Queens, New York City, to Fred and Mary Anne Trump. He grew up in Queens and attended the Kew-Forest School before transferring to the New York Military Academy at the age of 13."
-            onClick={() => handleClick("trump")}
+            href="trump"
           />
           <PersonaCard
             image={BidenImage}
             name="Joe Biden"
             party="The Democrats"
             about="Joe Biden was born on June 14, 1946, in Queens, New York City, to Fred and Mary Anne Trump. He grew up in Queens and attended the Kew-Forest School before transferring to the New York Military Academy at the age of 17."
-            onClick={() => handleClick("biden")}
+            href="biden"
           />
         </div>
       </div>

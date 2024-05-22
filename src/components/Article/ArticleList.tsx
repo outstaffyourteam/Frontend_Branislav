@@ -24,7 +24,7 @@ const ArticleList = ({ articles, isPositive, order, setOrder }: Props) => {
   return (
     <div
       className={cn(
-        "flex flex-col gap-6 w-1/2 px-6 py-8 border rounded-[10px]",
+        "flex flex-col gap-6 lg:w-1/2 w-full px-6 py-8 border rounded-[10px]",
         isPositive
           ? "border-paris-green bg-aque-squeeze"
           : "border-sweet-pink bg-dawn-pink"

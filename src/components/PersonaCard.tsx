@@ -1,18 +1,19 @@
 import Image, { StaticImageData } from "next/image";
+import Link from "next/link";
 
 type Props = {
   image: StaticImageData;
   name: string;
   party: string;
   about: string;
-  onClick?: () => void;
+  href: string;
 };
 
-const PersonaCard = ({ image, name, party, about, onClick }: Props) => {
+const PersonaCard = ({ image, name, party, about, href }: Props) => {
   return (
-    <div
+    <Link
+      href={href}
       role="presentation"
-      onClick={onClick}
       className="group cursor-pointer flex flex-col justify-center gap-5 w-full px-3 pt-3 pb-6 rounded-[20px] bg-soft-peach hover:bg-orange-primary transition-all duration-200"
     >
       <Image src={image} alt={name} height={450} />
@@ -26,7 +27,7 @@ const PersonaCard = ({ image, name, party, about, onClick }: Props) => {
       <p className="max-w-[400px] text-dark-slate-gray group-hover:text-white text-center transition-all">
         {about}
       </p>
-    </div>
+    </Link>
   );
 };
 
