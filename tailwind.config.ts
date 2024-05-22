@@ -25,6 +25,7 @@ const config: Config = {
         "dawn-pink": "#F8E9E8",
         "sweet-pink": "#F3A3A3",
         "mountain-mist": "#93999F",
+        silver: "#C7C9CC",
       },
     },
   },

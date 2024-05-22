@@ -1,18 +1,15 @@
 import { Facebook, Instagram, Twitter, Youtube } from "lucide-react";
 import Link from "next/link";
 
-type Props = {};
+type Props = { url: string };
 
-const CandidateInfo = (props: Props) => {
+const CandidateInfo = ({ url }: Props) => {
   return (
     <div className="flex flex-col justify-center items-center gap-5 py-4 bg-soft-peach rounded-lg w-full">
       <div className="flex flex-col items-center gap-3">
         <p>Campaign Website</p>
-        <Link
-          className="text-orange-primary"
-          href={"https://www.donaldjtrump.com/"}
-        >
-          http://www.donaldjtrump.com/
+        <Link className="text-orange-primary" href={url}>
+          {url}
         </Link>
       </div>
       <div className="flex flex-col items-center gap-3">

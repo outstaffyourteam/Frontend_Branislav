@@ -6,10 +6,12 @@ import { useState } from "react";
 import Pagination from "../Pagination";
 import ArticleList from "./ArticleList";
 
-const ArticleSegment = () => {
+type Props = { candidate: string };
+
+const ArticleSegment = ({ candidate }: Props) => {
   const [order, setOrder] = useState<ArticleOrder>("latest");
   let { articles, isLoading, fetchNextPage, fetchPrevPage } = useArticles(
-    "Trump",
+    candidate,
     order
   );
 
@@ -38,12 +40,14 @@ const ArticleSegment = () => {
             isPositive
             order={order}
             setOrder={setOrder}
+            candidate={candidate}
           />
           <ArticleList
             articles={articles}
             isPositive={false}
             order={order}
             setOrder={setOrder}
+            candidate={candidate}
           />
         </div>
       )}

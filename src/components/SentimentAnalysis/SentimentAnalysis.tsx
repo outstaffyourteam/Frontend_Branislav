@@ -4,8 +4,10 @@ import { useSentimentCount } from "@/hooks/useSentimentCount";
 import Smiley from "@/images/icons/Smiley";
 import BasicPie from "../PieChart";
 
-const SentimentAnalysis = () => {
-  const { summary } = useSentimentCount("Trump");
+type Props = { candidate: string };
+
+const SentimentAnalysis = ({ candidate }: Props) => {
+  const { summary } = useSentimentCount(candidate);
 
   return (
     <div className="w-full space-y-10 flex flex-col-reverse lg:flex-row items-center justify-between bg-soft-peach rounded-lg py-10 px-9">

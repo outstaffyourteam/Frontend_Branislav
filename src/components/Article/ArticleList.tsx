@@ -10,10 +10,17 @@ type Props = {
   articles: ArticleType[];
   isPositive?: boolean;
   order: ArticleOrder;
+  candidate: string;
   setOrder: (order: ArticleOrder) => void;
 };
 
-const ArticleList = ({ articles, isPositive, order, setOrder }: Props) => {
+const ArticleList = ({
+  articles,
+  isPositive,
+  order,
+  candidate,
+  setOrder,
+}: Props) => {
   if (isPositive !== undefined) {
     articles = articles.filter((article) =>
       isPositive
@@ -22,7 +29,7 @@ const ArticleList = ({ articles, isPositive, order, setOrder }: Props) => {
     );
   }
 
-  const { summary } = useSentimentCount("Trump");
+  const { summary } = useSentimentCount(candidate);
 
   return (
     <div

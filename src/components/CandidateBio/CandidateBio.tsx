@@ -1,17 +1,15 @@
 import Divider from "../Divider";
 import ListItem from "./ListItem";
 
-type Props = {};
+type Props = { name: string; party: string; about: string };
 
-const CandidateBio = (props: Props) => {
+const CandidateBio = ({ name, party, about }: Props) => {
   return (
     <div className="flex w-full flex-col items-start gap-10">
       <div className="flex flex-col lg:items-start items-center gap-6 w-full">
         <div className="flex flex-col items-start gap-3">
-          <p className="text-dark-slate-gray text-4xl font-bold">
-            Donald Trump
-          </p>
-          <p className="text-dark-slate-gray">The Republicans</p>
+          <p className="text-dark-slate-gray text-4xl font-bold">{name}</p>
+          <p className="text-dark-slate-gray">{party}</p>
         </div>
         <Divider />
       </div>
@@ -19,15 +17,7 @@ const CandidateBio = (props: Props) => {
         <p className="text-dark-slate-gray  text-2xl font-medium">
           About the Candidate
         </p>
-        <p className="text-dark-slate-gray">
-          Former President Trump was the first candidate to declare his intent
-          to run for the GOP nomination in 2024. He also became the first former
-          president to face any kind of criminal charges after being indicted by
-          a Manhattan grand jury in a case related to a payoff to a porn star.
-          He now faces federal criminal charges, too, related to his alleged
-          mishandling of classified documents that were discovered at his
-          Mar-a-Lago resort. (Trump has denied wrongdoing in both cases.)
-        </p>
+        <p className="text-dark-slate-gray">{about}</p>
       </div>
       <Divider />
       <div className="flex flex-col w-full lg:items-start items-center gap-4">
