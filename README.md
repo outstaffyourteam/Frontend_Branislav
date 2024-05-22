@@ -21,7 +21,7 @@ Follow the steps below to install and operate the project:
 1. **Clone the repository**
 
 ```bash
-git clone [https://github.com/Banidja/trump-vs-biden.git](https://github.com/outstaffyourteam/Frontend_Branislav.git)
+git clone https://github.com/outstaffyourteam/Frontend_Branislav.git
 ```
 
 2. **Install dependencies**
