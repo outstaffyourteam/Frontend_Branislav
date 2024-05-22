@@ -14,8 +14,8 @@ const Page = () => {
   };
 
   return (
-    <div className="flex bg-slate-300 items-center justify-center h-screen w-full">
-      <div className="flex flex-col items-start gap-6 bg-white rounded-[20px] py-10 min-w-[1000px]">
+    <div className="flex bg-slate-300 items-center justify-center min-h-screen h-full w-full">
+      <div className="flex flex-col items-center lg:items-start gap-6 bg-white rounded-[20px] py-10 min-w-[1000px]">
         <p className=" text-dark-slate-gray px-10 font-bold text-2xl">
           Select Persona
         </p>
@@ -23,7 +23,7 @@ const Page = () => {
         <p className="self-center text-silver">
           Pick a Candidate to View Latest News
         </p>
-        <div className="flex items-center w-full gap-6 px-10">
+        <div className="flex lg:flex-row h-full flex-col items-center lg:w-full gap-6 px-10">
           <PersonaCard
             image={TrumpImage}
             name="Donald Trump"
