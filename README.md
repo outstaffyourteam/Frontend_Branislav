@@ -30,7 +30,18 @@ git clone https://github.com/Banidja/trump-vs-biden.git
 pnpm install
 ```
 
-3. **Start the development server**
+3.  **Add environment variables**
+
+Create a `.env.local` file in the root directory of the project and add the following environment variables:
+
+```
+NEXT_PUBLIC_WEBZ_API_KEY=your_api_key
+NEXT_PUBLIC_API_URL="https://api.webz.io"
+```
+
+Replace `your_api_key` with your actual API key.
+
+4.  **Start the development server**
 
 ```bash
 pnpm dev

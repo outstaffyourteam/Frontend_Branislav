@@ -40,14 +40,12 @@ const ArticleSegment = ({ candidate }: Props) => {
             isPositive
             order={order}
             setOrder={setOrder}
-            candidate={candidate}
           />
           <ArticleList
             articles={articles}
             isPositive={false}
             order={order}
             setOrder={setOrder}
-            candidate={candidate}
           />
         </div>
       )}
