@@ -3,11 +3,12 @@
 import { useArticles } from "@/hooks/useArticles";
 import { ArticleOrder } from "@/types/Article";
 import { useState } from "react";
+import Pagination from "../Pagination";
 import ArticleList from "./ArticleList";
 
 const ArticleSegment = () => {
   const [order, setOrder] = useState<ArticleOrder>("latest");
-  let { articles, fetchNextPage } = useArticles("Trump", order);
+  let { articles, fetchNextPage, fetchPrevPage } = useArticles("Trump", order);
 
   const [currentPage, setCurrentPage] = useState(1);
 
@@ -17,7 +18,10 @@ const ArticleSegment = () => {
   };
 
   const loadPreviousPage = () => {
-    setCurrentPage((prevPage) => prevPage - 1);
+    if (currentPage > 1) {
+      fetchPrevPage();
+      setCurrentPage((prevPage) => prevPage - 1);
+    }
   };
 
   return (
@@ -36,13 +40,12 @@ const ArticleSegment = () => {
           setOrder={setOrder}
         />
       </div>
-      <div className="flex items-center justify-between w-full">
-        <button onClick={loadPreviousPage} disabled={currentPage === 1}>
-          Previous
-        </button>
-        <span>{currentPage}</span>
-        <button onClick={loadNextPage}>Next</button>
-      </div>
+
+      <Pagination
+        pageNumber={currentPage}
+        onPrev={loadPreviousPage}
+        onNext={loadNextPage}
+      />
     </div>
   );
 };

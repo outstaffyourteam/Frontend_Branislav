@@ -6,9 +6,10 @@ const API_ENDPOINT = "/newsApiLite";
 const API_KEY = process.env.NEXT_PUBLIC_WEBZ_API_KEY;
 
 export const useArticles = (name: string, order: ArticleOrder) => {
-  const [articles, setArticles] = useState<Article[]>([]);
+  const [articles, setArticles] = useState<Article[][]>([[]]);
   const [nextUrl, setNextUrl] = useState<string | null>(null);
   const [isLoading, setIsLoading] = useState(false);
+  const [currentPage, setCurrentPage] = useState(0);
 
   const fetchArticles = async (endpoint: string) => {
     setIsLoading(true);
@@ -17,8 +18,9 @@ export const useArticles = (name: string, order: ArticleOrder) => {
     const data: ArticlesResponse = await response.json();
 
     if (data && data.posts && Array.isArray(data.posts)) {
-      setArticles(data.posts);
+      setArticles((oldArticles) => [...oldArticles, data.posts]);
       setNextUrl(data.next);
+      setCurrentPage((prevPage) => prevPage + 1);
     }
     setIsLoading(false);
   };
@@ -34,10 +36,16 @@ export const useArticles = (name: string, order: ArticleOrder) => {
   }, [name, order]);
 
   const fetchNextPage = () => {
-    if (nextUrl && !isLoading) {
+    if (!isLoading && nextUrl) {
       fetchArticles(nextUrl);
     }
   };
 
-  return { articles, fetchNextPage };
+  const fetchPrevPage = () => {
+    if (!isLoading && currentPage > 0) {
+      setCurrentPage((prevPage) => prevPage - 1);
+    }
+  };
+
+  return { articles: articles[currentPage], fetchNextPage, fetchPrevPage };
 };
