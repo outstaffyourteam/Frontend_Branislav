@@ -30,7 +30,7 @@ const Article = ({ article, isFirst }: Props) => {
         <p className="text-2xl font-bold text-dark-slate-gray">
           {article?.title}
         </p>
-        <p>
+        <p className="text-mountain-mist">
           {article?.highlightText &&
             parse(truncateText(article?.highlightText))}
         </p>

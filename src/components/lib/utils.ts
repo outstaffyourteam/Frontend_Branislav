@@ -7,26 +7,11 @@ export function cn(...inputs: ClassValue[]) {
 
 export function formatDate(dateString: string): string {
   const date = new Date(dateString);
-  const day = String(date.getDate()).padStart(2, "0");
-  const monthIndex = date.getMonth();
-  const year = date.getFullYear();
-
-  const monthNames = [
-    "Jan",
-    "Feb",
-    "Mar",
-    "Apr",
-    "May",
-    "Jun",
-    "Jul",
-    "Aug",
-    "Sep",
-    "Oct",
-    "Nov",
-    "Dec",
-  ];
-
-  return `${day} ${monthNames[monthIndex]}, ${year}`;
+  return date.toLocaleDateString("en-US", {
+    day: "2-digit",
+    month: "short",
+    year: "numeric",
+  });
 }
 
 export const truncateText = (text: string) => {

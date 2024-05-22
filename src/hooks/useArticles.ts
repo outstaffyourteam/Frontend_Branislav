@@ -1,9 +1,9 @@
 import { Article, ArticleOrder, ArticlesResponse } from "@/types/Article";
 import { useEffect, useState } from "react";
 
-const API_BASE = "https://api.webz.io";
-const API_ENDPOINT = "/newsApiLite";
 const API_KEY = process.env.NEXT_PUBLIC_WEBZ_API_KEY;
+const API_BASE = process.env.NEXT_PUBLIC_API_URL;
+const API_ENDPOINT = "/newsApiLite";
 
 export const useArticles = (name: string, order: ArticleOrder) => {
   const [articles, setArticles] = useState<Article[][]>([[]]);

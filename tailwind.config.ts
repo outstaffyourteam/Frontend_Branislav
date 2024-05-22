@@ -15,7 +15,7 @@ const config: Config = {
       },
       colors: {
         "soft-peach": "#EFEFEF",
-        "orange-peel": "#FCA000",
+        "orange-primary": "#FCA000",
         "davy-grey": "#4F5962",
         "dark-slate-gray": "#273341",
         "aque-squeeze": "#E8F5ED",
@@ -24,6 +24,7 @@ const config: Config = {
         aluminium: "#A9ADB3",
         "dawn-pink": "#F8E9E8",
         "sweet-pink": "#F3A3A3",
+        "mountain-mist": "#93999F",
       },
     },
   },

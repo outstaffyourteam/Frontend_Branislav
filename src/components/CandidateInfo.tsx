@@ -9,7 +9,7 @@ const CandidateInfo = (props: Props) => {
       <div className="flex flex-col items-center gap-3">
         <p>Campaign Website</p>
         <Link
-          className="text-orange-peel"
+          className="text-orange-primary"
           href={"https://www.donaldjtrump.com/"}
         >
           http://www.donaldjtrump.com/
