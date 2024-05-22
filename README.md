@@ -1,4 +1,4 @@
-# Project Name: Next.js Presidential Candidate Sentiment Analysis
+# Trump vs Biden
 
 ## Project Overview
 
