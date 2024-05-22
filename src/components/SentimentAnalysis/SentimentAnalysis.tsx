@@ -5,7 +5,7 @@ import Smiley from "@/images/icons/Smiley";
 import BasicPie from "../PieChart";
 
 const SentimentAnalysis = () => {
-  const sentiments = useSentimentCount("Trump");
+  const { summary } = useSentimentCount("Trump");
 
   return (
     <div className="w-full gap-10 flex-col xl:flex-row flex items-center justify-between bg-soft-peach rounded-lg py-10 px-9">
@@ -32,7 +32,8 @@ const SentimentAnalysis = () => {
           </span>
         </p>
       </div>
-      <BasicPie positive={sentiments.positive} negative={sentiments.negative} />
+
+      <BasicPie positive={summary.positive} negative={summary.negative} />
     </div>
   );
 };

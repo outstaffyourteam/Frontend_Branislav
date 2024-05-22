@@ -8,7 +8,10 @@ import ArticleList from "./ArticleList";
 
 const ArticleSegment = () => {
   const [order, setOrder] = useState<ArticleOrder>("latest");
-  let { articles, fetchNextPage, fetchPrevPage } = useArticles("Trump", order);
+  let { articles, isLoading, fetchNextPage, fetchPrevPage } = useArticles(
+    "Trump",
+    order
+  );
 
   const [currentPage, setCurrentPage] = useState(1);
 
@@ -25,21 +28,25 @@ const ArticleSegment = () => {
   };
 
   return (
-    <div className="flex flex-col items-center gap-16">
-      <div className="flex flex-col lg:flex-row items-start gap-6 w-full">
-        <ArticleList
-          articles={articles}
-          isPositive
-          order={order}
-          setOrder={setOrder}
-        />
-        <ArticleList
-          articles={articles}
-          isPositive={false}
-          order={order}
-          setOrder={setOrder}
-        />
-      </div>
+    <div className="flex w-full flex-col items-center gap-16">
+      {isLoading ? (
+        <p>Loading...</p>
+      ) : (
+        <div className="flex flex-col lg:flex-row items-start gap-6 w-full">
+          <ArticleList
+            articles={articles}
+            isPositive
+            order={order}
+            setOrder={setOrder}
+          />
+          <ArticleList
+            articles={articles}
+            isPositive={false}
+            order={order}
+            setOrder={setOrder}
+          />
+        </div>
+      )}
 
       <Pagination
         pageNumber={currentPage}

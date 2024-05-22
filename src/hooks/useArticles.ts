@@ -47,5 +47,10 @@ export const useArticles = (name: string, order: ArticleOrder) => {
     }
   };
 
-  return { articles: articles[currentPage], fetchNextPage, fetchPrevPage };
+  return {
+    articles: articles[currentPage],
+    isLoading,
+    fetchNextPage,
+    fetchPrevPage,
+  };
 };

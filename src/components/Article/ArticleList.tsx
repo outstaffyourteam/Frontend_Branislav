@@ -1,5 +1,6 @@
 "use client";
 
+import { useSentimentCount } from "@/hooks/useSentimentCount";
 import { ArticleOrder, Article as ArticleType } from "@/types/Article";
 import { cn } from "../lib/utils";
 import Article from "./Article";
@@ -21,6 +22,8 @@ const ArticleList = ({ articles, isPositive, order, setOrder }: Props) => {
     );
   }
 
+  const { summary } = useSentimentCount("Trump");
+
   return (
     <div
       className={cn(
@@ -38,7 +41,7 @@ const ArticleList = ({ articles, isPositive, order, setOrder }: Props) => {
               isPositive ? "text-paris-green" : "text-sweet-pink"
             )}
           >
-            78
+            {isPositive ? summary.positive : summary.negative}
           </p>
           <p className="text-pale-sky">
             {isPositive ? "Positive" : "Negative"} Articles
