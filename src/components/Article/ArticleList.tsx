@@ -1,20 +1,18 @@
 "use client";
 
-import { useArticles } from "@/hooks/useArticles";
-import { ArticleOrder } from "@/types/Article";
+import { ArticleOrder, Article as ArticleType } from "@/types/Article";
 import { cn } from "../lib/utils";
 import Article from "./Article";
 import OrderDropdown from "./OrderDropdown";
 
 type Props = {
+  articles: ArticleType[];
   isPositive?: boolean;
   order: ArticleOrder;
   setOrder: (order: ArticleOrder) => void;
 };
 
-const ArticleList = ({ isPositive, order, setOrder }: Props) => {
-  let articles = useArticles("Trump", order);
-
+const ArticleList = ({ articles, isPositive, order, setOrder }: Props) => {
   if (isPositive !== undefined) {
     articles = articles.filter((article) =>
       isPositive

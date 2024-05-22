@@ -19,6 +19,7 @@ export type Article = {
 export type ArticlesResponse = {
   posts: Article[];
   totalResults: number;
+  next: string;
   moreResultsAvailable: number;
 };
 
